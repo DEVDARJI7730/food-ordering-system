@@ -1,3 +1,4 @@
+<?php
 $host = getenv('DB_HOST') ?: 'localhost';
 $port = getenv('DB_PORT') ?: '3306';
 $db_name = getenv('DB_NAME') ?: 'food_order_db';
