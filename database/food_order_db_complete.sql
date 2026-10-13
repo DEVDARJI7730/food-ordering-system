@@ -182,7 +182,6 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,1,8,750.00,18.75,18.75,0.00,787.50,10.00,75.00,712.50,'Pending','101 Green Valley, Satellite, Ahmedabad','9876543210','Cash on Delivery','2026-10-05 12:09:33','2026-10-05 12:09:33'),(2,3,8,210.00,5.25,5.25,0.00,220.50,10.00,21.00,199.50,'Delivered','101 Green Valley, Satellite, Ahmedabad','9876543210','Cash on Delivery','2026-10-05 12:09:33','2026-10-05 12:09:33'),(3,3,8,695.00,17.38,17.38,0.00,729.76,10.00,69.50,660.26,'Delivered','101 Green Valley, Satellite, Ahmedabad','9876543210','Cash on Delivery','2026-10-05 12:13:08','2026-10-05 12:13:28');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
