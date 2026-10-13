@@ -25,7 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'], $_PO
             $_SESSION['error'] = "Error updating order status: " . $e->getMessage();
         }
     }
-    header("Location: orders.php" . (isset($_GET['status']) ? '?status=' . urlencode($_GET['status']) : ''));
+    $redir_url = "orders.php" . (isset($_GET['status']) ? '?status=' . urlencode($_GET['status']) : '');
+    if (!headers_sent()) {
+        header("Location: " . $redir_url);
+    } else {
+        echo "<script>window.location.href='" . $redir_url . "';</script>";
+    }
     exit();
 }
 

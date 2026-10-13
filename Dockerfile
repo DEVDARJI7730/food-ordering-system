@@ -4,6 +4,9 @@ FROM php:8.2-apache
 RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
+# Enable output buffering in PHP configuration (matches XAMPP behavior to prevent headers already sent errors)
+RUN echo "output_buffering = 4096" > /usr/local/etc/php/conf.d/output-buffering.ini
+
 # Enable Apache mod_rewrite for clean URLs if needed
 RUN a2enmod rewrite
 

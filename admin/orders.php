@@ -19,7 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
         $_SESSION['error'] = "Invalid status update request.";
     }
     
-    header("Location: orders.php" . (isset($_GET['order_id']) ? "?order_id=" . intval($_GET['order_id']) : ""));
+    $redir_url = "orders.php" . (isset($_GET['order_id']) ? "?order_id=" . intval($_GET['order_id']) : "");
+    if (!headers_sent()) {
+        header("Location: " . $redir_url);
+    } else {
+        echo "<script>window.location.href='" . $redir_url . "';</script>";
+    }
     exit();
 }
 
